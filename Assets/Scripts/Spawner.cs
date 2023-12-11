@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private Island island;
+    [SerializeField] private SpawObject[] objects;
     [SerializeField] private float maxRandomY = 5.0F;
     [SerializeField] private float maxRandomX = 2.0f;
     [SerializeField] private float periodSpawn = 4.0f;
@@ -23,7 +23,7 @@ public class Spawner : MonoBehaviour
 
     IEnumerator Spawn()
     {
-        yield return wait;
+        
         while (isSpawn)
         {
             for (int i = 0; i < countSpawn; i++)
@@ -34,13 +34,14 @@ public class Spawner : MonoBehaviour
                     transform.position.y 
                     + Random.Range(-maxRandomY, maxRandomY));
 
-                Instantiate(island, position, Quaternion.identity);
+                Instantiate(objects[Random.Range(0,objects.Length)],
+                    position, Quaternion.identity);
             }
 
             yield return wait;
 
         }
-
+        yield return wait;
     }
 
     private void OnDestroy()

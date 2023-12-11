@@ -40,7 +40,6 @@ public class Spawner : MonoBehaviour
                 if (!IsFreeSpace(position,obj.Radius))
                 {
                     Destroy(obj.gameObject);
-                    print("destroy");
                 }
             }
 

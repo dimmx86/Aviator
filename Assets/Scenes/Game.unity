@@ -929,10 +929,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objects:
-  - {fileID: 1162106905043048200, guid: 5d07874e86928d645a195032de68b2b4, type: 3}
-  maxRandomY: 5
+  - {fileID: 8444927575220337978, guid: 3a5cf82afd53eb94cab6a7e1c66b8bbb, type: 3}
+  - {fileID: 8444927575220337978, guid: 7a32e6e60bddae54bb521d39d1f09869, type: 3}
+  - {fileID: 8444927575220337978, guid: 1f15c602cbdaaa4499ca1f7d0a5e192c, type: 3}
+  - {fileID: 8444927575220337978, guid: 222118b8a648ac94aac4a05a498caa6d, type: 3}
+  - {fileID: 8444927575220337978, guid: 1b85fb07bb65db34a854bdfa87b11c99, type: 3}
+  maxRandomY: 10
   maxRandomX: 5
-  periodSpawn: 3
+  periodSpawn: 1
   countSpawn: 4
 --- !u!1 &2091841415
 GameObject:

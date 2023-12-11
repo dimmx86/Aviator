@@ -34,8 +34,14 @@ public class Spawner : MonoBehaviour
                     transform.position.y 
                     + Random.Range(-maxRandomY, maxRandomY));
 
-                Instantiate(objects[Random.Range(0,objects.Length)],
+                SpawObject obj = Instantiate(
+                    objects[Random.Range(0,objects.Length)],
                     position, Quaternion.identity);
+                if (!IsFreeSpace(position,obj.Radius))
+                {
+                    Destroy(obj.gameObject);
+                    print("destroy");
+                }
             }
 
             yield return wait;
@@ -43,6 +49,18 @@ public class Spawner : MonoBehaviour
         }
         yield return wait;
     }
+
+    private bool IsFreeSpace(Vector3 position, float radius)
+    {
+        var collision = Physics2D.CircleCastAll(position, radius,Vector2.zero);
+        if (collision.Length > 1)
+        {
+            return false;
+
+        }
+        return true;
+    }
+
 
     private void OnDestroy()
     {

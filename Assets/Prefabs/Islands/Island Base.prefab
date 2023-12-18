@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8281168123472213183}
   - component: {fileID: 3161722048290229696}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 8498934914945232817}
   - component: {fileID: 5163451083570986813}
   - component: {fileID: 1162106905043048200}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Island Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f640ef1e038f674da49065719ea9d6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthy: 0
 --- !u!114 &1162106905043048200
 MonoBehaviour:
   m_ObjectHideFlags: 0

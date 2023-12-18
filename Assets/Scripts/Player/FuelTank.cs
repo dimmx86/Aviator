@@ -18,6 +18,7 @@ public class FuelTank : MonoBehaviour
     public void StartConsumption()
     {
         curentFuel = startFuel;
+        OnChangedFuel?.Invoke(curentFuel);
         secInOneFuel = new WaitForSeconds( 60 / fuelConsumptionInMin);
         isConsumption = true;
         StartCoroutine(Consumption());
@@ -39,9 +40,14 @@ public class FuelTank : MonoBehaviour
             {
                 curentFuel--;
                 OnChangedFuel?.Invoke(curentFuel);
-                print("fuel:" + curentFuel);
             }
         }
         yield return secInOneFuel;
+    }
+
+    public void AddFuel(int fuel)
+    {
+        curentFuel += fuel;
+        OnChangedFuel?.Invoke(curentFuel);
     }
 }
